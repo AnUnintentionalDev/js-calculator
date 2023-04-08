@@ -1,0 +1,93 @@
+html, body{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.main-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc-container{
+  width: 360px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.calc-header{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100px;
+  padding: 20px;
+  border-bottom: 2px solid #75ff75;
+  background-color: #fff;
+}
+
+.calc-header .calc-entered-val{
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.calc-btns-wrapper{
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.row{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.calc-btn{
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.calc-btn:last-child{
+  margin-right: 0;
+}
+
+.calc-btn--equals{
+  border-radius: 50px;
+  width: unset;
+  flex-grow: 1;
+  font-size: 30px;
+  background-color: #006400;
+  color: #fff;
+}
+
+.calc-btn--equals:hover{
+  background-color: #038203;
+}
