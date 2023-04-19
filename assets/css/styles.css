@@ -44,8 +44,14 @@ html, body{
 }
 
 .calc-header .calc-entered-val{
+  font-weight: bold;
   margin-bottom: 10px;
   color: #666;
+}
+
+.calc-result{
+  color: #006400;
+  font-weight: bold;
 }
 
 .calc-btns-wrapper{
@@ -61,18 +67,22 @@ html, body{
 
 .calc-btn{
   width: 74px;
-  height: 74px;
   border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: 24px;
   margin-right: 10px;
   margin-bottom: 10px;
   outline: 0;
   border: 0;
   cursor: pointer;
+}
+
+.calc-btn .calc-btn-data-id {
+  width: 100%;
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .calc-btn:last-child{
