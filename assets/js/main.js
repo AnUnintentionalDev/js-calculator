@@ -43,7 +43,10 @@ window.addEventListener("load", (event) => {
       }
 
       blankVal = true;
-      enteredVal.innerHTML += e.target.innerHTML.trim() == 'percent' ? '%' : e.target.innerHTML;
+
+      const targeInnerHTMLTrimmed = e.target.innerHTML.trim();
+      
+      enteredVal.innerHTML += targeInnerHTMLTrimmed == 'percent' ? '%' : targeInnerHTMLTrimmed == 'X' ? '*' : targeInnerHTMLTrimmed == '÷' ? '/' : e.target.innerHTML;
       
       if (enteredVal.innerHTML.includes('=')) {
         enteredVal.innerHTML = enteredVal.innerHTML.slice(0, enteredVal.innerHTML.length - 1);
@@ -53,7 +56,7 @@ window.addEventListener("load", (event) => {
 
   function doCalculation(operator){
     if (operator == '='){
-      const finalVal = eval(enteredVal.innerHTML);
+      const finalVal = eval(enteredVal.innerHTML).toFixed(2);
       enteredVal.style.fontSize = '18px';
       finalResult.style.fontSize = '24px';
       finalResult.innerHTML = finalVal;
