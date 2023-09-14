@@ -20,11 +20,17 @@ window.addEventListener("load", (event) => {
 
       if (btnDataId == 'reset') {
         enteredVal.innerHTML = '0';
+        finalResult.innerHTML = '';
+        enteredVal.style.fontSize = '24px';
+        finalResult.style.fontSize = '18px';
         return;
       }
 
       if (btnDataId == 'delete'){
+        enteredVal.style.fontSize = '24px';
+        finalResult.style.fontSize = '18px';
         enteredVal.innerHTML = enteredVal.innerHTML.slice(0, -1);
+        finalResult.innerHTML = '';
         return;
       }
 
@@ -37,13 +43,21 @@ window.addEventListener("load", (event) => {
       }
 
       blankVal = true;
-      enteredVal.innerHTML += e.target.innerHTML;
+      enteredVal.innerHTML += e.target.innerHTML.trim() == 'percent' ? '%' : e.target.innerHTML;
+      
+      if (enteredVal.innerHTML.includes('=')) {
+        enteredVal.innerHTML = enteredVal.innerHTML.slice(0, enteredVal.innerHTML.length - 1);
+      }
     });
   });
 
   function doCalculation(operator){
-    const finalVal = eval(enteredVal.innerHTML);
-    finalResult.innerHTML = finalVal;
+    if (operator == '='){
+      const finalVal = eval(enteredVal.innerHTML);
+      enteredVal.style.fontSize = '18px';
+      finalResult.style.fontSize = '24px';
+      finalResult.innerHTML = finalVal;
+    }
   }
 
 });
